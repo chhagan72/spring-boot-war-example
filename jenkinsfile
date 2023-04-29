@@ -30,7 +30,7 @@ pipeline{
             
         }
         stage("Deploy-on-production"){
-        intput{
+        input{
         message "Should we continue ?"
         ok "We continue ............"
         }
