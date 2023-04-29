@@ -30,6 +30,10 @@ pipeline{
             
         }
         stage("Deploy-on-production"){
+        intput{
+        message "Should we continue ?"
+        ok "We continue ............"
+        }
             steps{
                  //Deploy on container ->plugins
                  deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://13.208.157.227:8080')], contextPath: '/app', war: '**/*.war'
